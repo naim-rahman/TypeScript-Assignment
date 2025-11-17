@@ -51,7 +51,6 @@ type Item = {
   title: string;
   rating: number;
 };
-
 const filterByRating = (items: Item[]): Item[] => {
   return items.filter((item) => item.rating >= 4);
 };
@@ -64,7 +63,6 @@ type User = {
     email: string;
     isActive: boolean;
 };
-
 const filterActiveUsers = (users: User[]): User[] => {
   return users.filter((item) => item.isActive === true);
 };
@@ -78,8 +76,40 @@ interface Book {
     publishedYear: number;
     isAvailable: boolean;
 }
-
-
 const printBookDetails = (book: Book) => {
   return `Title: ${book.title}, Author: ${book.author}, Publication: ${book.publishedYear}, Available: ${book.isAvailable ? "Yes" : "No"}`;
 }
+
+
+
+
+
+type Lookup = {
+  [key: string]: boolean;
+};
+
+const getUniqueValues = (
+  arr1: (number | string)[], 
+  arr2: (number | string)[]): 
+  (number | string)[] => {
+
+  const lookup: Lookup = {};
+  const result: (number | string)[] = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    const value = arr1[i];
+    if (!lookup[value]) {
+      lookup[value] = true;
+      result.push(value);
+    }
+  }
+
+  for (let i = 0; i < arr2.length; i++) {
+    const value = arr2[i];
+    if (!lookup[value]) {
+      lookup[value] = true;
+      result.push(value);
+    }
+  }
+  return result;
+};
