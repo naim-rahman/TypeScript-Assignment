@@ -1,6 +1,7 @@
 # TypeScript Interview Questions – Blog
 
-## Interface vs Type - পার্থক্য কী?
+## What are some differences between interfaces and types in TypeScript?
+
 TypeScript-এ **interface** এবং **type** দুইটাই object-এর structure define করতে ব্যবহার হয়। কিন্তু এদের মধ্যে কিছু গুরুত্বপূর্ণ পার্থক্য আছে—
 
 ### **1️ Declaration Merging**
@@ -26,7 +27,7 @@ interface User {
 }
 // Merged: { name: string; age: number }
 
-// type
+// Type
 
 type Person = {
   name: string;
@@ -37,10 +38,11 @@ type Person = {
 ```
 ---
 
-## Any vs Unknown vs Never – পার্থক্য কী?
+## Explain the difference between any, unknown, and never types in TypeScript.
+
 TypeScript-এ তিনটি special type আছে – **any**, **unknown**, এবং **never**। এগুলো জানা খুবই জরুরি।
 
-### 1️ Any 
+### **1️ Any** 
 - যে কোনো মান রাখা যায়।
 - TypeScript কোনো checking করবে না।
 - ভুল হওয়ার সম্ভাবনা বেশি।
@@ -52,7 +54,7 @@ data = "Hello";
 data.toUpperCase(); // কোনো সমস্যা নেই
 ```
 
-### 2️ Unknown 
+### **2️ Unknown** 
 - যে কোনো মান রাখা যায়, কিন্তু **ব্যবহারের আগে type check করতে হয়**।
 - এটি `any` থেকে তুলনামুলক safer।
 
@@ -66,8 +68,9 @@ if (typeof info === "string") {
 }
 ```
 
-### 3️ Never – কখনো কিছু return করবে না
-- Never সাধারণত এমন function-এ use হয় যেটা সবসময় error throw করে।
+### **3️ Never**
+- Never সাধারণত এমন function-এ use হয় যেটা কখনো কিছু return করবে না,
+- সবসময় error throw করে।
 
 ```ts
 function crash(): never {
@@ -77,6 +80,6 @@ function crash(): never {
 
 ---
 
-- `interface` structure define করার জন্য flexible, আর `type` আরও powerful কারণ এটি union/tuple ইত্যাদি handle করতে পারে।
-- `any` হলো unsafe, `unknown` হলো safe alternative, আর `never` ব্যবহার হয় এমন function-এ যা কখনো return করে না।
+- `Interface` structure define করার জন্য flexible, আর `Type` আরও powerful কারণ এটি union/tuple ইত্যাদি handle করতে পারে।
+- `Any` হলো unsafe, `Unknown` হলো safe alternative, আর `Never` ব্যবহার হয় এমন function-এ যা কখনো return করে না।
 
