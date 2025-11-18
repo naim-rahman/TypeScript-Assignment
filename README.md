@@ -51,7 +51,7 @@ TypeScript-এ তিনটি special type আছে – **any**, **unknown**, 
 let data: any;
 data = 10;
 data = "Hello";
-data.toUpperCase(); // কোনো সমস্যা নেই
+data.toUpperCase();
 ```
 
 ### **2️ Unknown** 
