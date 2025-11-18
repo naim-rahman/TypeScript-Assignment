@@ -37,10 +37,10 @@ type Person = {
 ```
 ---
 
-## any vs unknown vs never – পার্থক্য কী?
+## Any vs Unknown vs Never – পার্থক্য কী?
 TypeScript-এ তিনটি special type আছে – **any**, **unknown**, এবং **never**। এগুলো জানা খুবই জরুরি।
 
-### **1️ Any **
+### 1️ Any 
 - যে কোনো মান রাখা যায়।
 - TypeScript কোনো checking করবে না।
 - ভুল হওয়ার সম্ভাবনা বেশি।
@@ -52,7 +52,7 @@ data = "Hello";
 data.toUpperCase(); // কোনো সমস্যা নেই
 ```
 
-### **2️ Unknown **
+### 2️ Unknown 
 - যে কোনো মান রাখা যায়, কিন্তু **ব্যবহারের আগে type check করতে হয়**।
 - এটি `any` থেকে তুলনামুলক safer।
 
@@ -66,7 +66,7 @@ if (typeof info === "string") {
 }
 ```
 
-### **3️ Never – কখনো কিছু return করবে না**
+### 3️ Never – কখনো কিছু return করবে না
 - Never সাধারণত এমন function-এ use হয় যেটা সবসময় error throw করে।
 
 ```ts
